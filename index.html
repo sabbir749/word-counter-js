@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            text-align: center;
+            background-color: rgba(23, 207, 207, 0.356);
+        }
+
+        #btn-count:hover {
+            background-color: rgb(14, 64, 87);
+            color: white;
+        }
+
+        #btn-count {
+            border: 1px solid black;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 17px;
+            font-weight: bold;
+            background-color: rgba(0, 233, 241, 0.349);
+        }
+
+        .word-count-container {
+            background-color: rgba(13, 211, 211, 0.63);
+            color: rgba(0, 0, 0, 0.712);
+            font-size: 22px;
+            word-spacing: 10px;
+            margin-bottom: 10px;
+            padding: 6px 0;
+        }
+
+        #textarea-box {
+            padding: 15px;
+            width: 70%;
+            height: 25vw;
+            box-shadow: 0px 1px 5px 0px rgba(7, 7, 105, 0.61);
+            border: 1px solid rgba(0, 0, 0, 0.315);
+        }
+
+        span {
+            color: rgba(240, 0, 0, 0.534);
+            font-size: 30px;
+          
+        }
+
+        h1 {
+            margin-top: 10px;
+            font-size: 40px;
+        }
+        b{
+            color: rgb(57, 148, 190);
+            
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h1><b>W</b>ord <b>C</b>ounter</h1>
+        <div class="word-count-container">
+            <h3><span id="words">0</span> words <span id="characters">0</span> characters</h3>
+        </div>
+        <textarea placeholder="Start typing, or copy and paste your text here..." name="" cols="" rows="" id="textarea-box"></textarea>
+        <br>
+        <br>
+        <button id="btn-count">Count</button>
+    </div>
+
+    <script>
+
+        document.getElementById('btn-count').addEventListener('click', function () {
+            let allTexts = document.getElementById('textarea-box').value;
+            let splittedText = allTexts.split(' ');
+            let wordsLength = splittedText.length;
+            document.getElementById('words').innerText = wordsLength;
+            document.getElementById('characters').innerText = allTexts.length;
+
+        })
+
+
+    </script>
+
+</body>
+
+</html>
