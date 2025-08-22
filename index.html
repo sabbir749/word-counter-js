@@ -33,7 +33,7 @@
             font-size: 17px;
             font-weight: bold;
             background-color: rgb(255, 255, 255);
-            margin-bottom: 10px;
+
         }
 
         #btn-delete {
@@ -44,7 +44,6 @@
             font-size: 17px;
             font-weight: bold;
             background-color: rgb(218, 218, 218);
-            margin-left: 20px;
         }
 
         .word-count-container {
@@ -89,6 +88,26 @@
             color: rgb(28, 45, 121);
             font-size: 13px;
         }
+
+        .all-buttons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .extra-btn {
+            padding: 10px 15px;
+            font-size: 13px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .extra-functions{
+            margin-left: 30px;
+        }
     </style>
 </head>
 
@@ -102,8 +121,17 @@
             id="textarea-box"></textarea>
         <br>
         <br>
-        <button id="btn-count">Count</button>
-        <button id="btn-delete">Delete</button>
+        <div class="all-buttons">
+            <button id="btn-count">Count</button>
+            <button id="btn-delete">Delete</button>
+
+            <div class="extra-functions">
+                <button class="extra-btn" id="btn-uppercase">UPPERCASE</button>
+                <button class="extra-btn" id="btn-lowercase">lowercase</button>
+
+            </div>
+
+        </div>
     </div>
     <footer class="footer">
         <p>Made by <i>Md Sabbir Hossain</i></p>
@@ -129,8 +157,15 @@
             document.getElementById('words').innerText = 0;
             document.getElementById('characters').innerText = 0;
 
-
         })
+
+        document.getElementById('btn-uppercase').addEventListener('click', function () {
+            document.getElementById('textarea-box').value = document.getElementById('textarea-box').value.toUpperCase();
+        })
+        document.getElementById('btn-lowercase').addEventListener('click', function () {
+            document.getElementById('textarea-box').value = document.getElementById('textarea-box').value.toLowerCase();
+        })
+
 
     </script>
 </body>
